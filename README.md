@@ -105,7 +105,7 @@ Unlike simplified blockchain tutorials that only implement hashing and linked li
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/YOUR_USERNAME/JAVACoin.git
+git clone https://github.com/zelssorathiya2615/JAVACoin.git
 cd JAVACoin
 
 # 2. Build the project (downloads dependencies automatically via Maven Wrapper)
