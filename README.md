@@ -110,19 +110,19 @@ cd JAVACoin
 
 # 2. Build the project (downloads dependencies automatically via Maven Wrapper)
 # Windows:
-mvnw.cmd clean package
+.\mvnw.cmd clean package
 # Linux/Mac:
 ./mvnw clean package
 
 # 3. Generate the Genesis Block (run once, before first launch)
 # Windows:
-generate-genesis.bat
+.\generate-genesis.bat
 # Linux/Mac:
 chmod +x generate-genesis.sh && ./generate-genesis.sh
 
 # 4. Launch the 6-node network
 # Windows:
-run-nodes-web.bat
+.\run-nodes-web.bat
 # Linux/Mac:
 chmod +x run-nodes.sh && ./run-nodes.sh
 ```

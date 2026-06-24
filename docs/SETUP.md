@@ -63,7 +63,7 @@ This creates the shared genesis block that all nodes will use. **Run this only o
 
 **Windows:**
 ```cmd
-generate-genesis.bat
+.\generate-genesis.bat
 ```
 
 **Linux/Mac:**
@@ -80,7 +80,7 @@ This creates:
 
 **Windows:**
 ```cmd
-run-nodes-web.bat
+.\run-nodes-web.bat
 ```
 
 **Linux/Mac:**
