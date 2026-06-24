@@ -7,7 +7,7 @@ Thank you for your interest in contributing to JAVACoin! This project is an educ
 ### 1. Fork the Repository
 Click the "Fork" button on GitHub and clone your fork locally:
 ```bash
-git clone https://github.com/YOUR_USERNAME/JAVACoin.git
+git clone https://github.com/zelssorathiya2615/JAVACoin.git
 cd JAVACoin
 ```
 
