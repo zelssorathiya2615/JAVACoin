@@ -4,14 +4,15 @@ echo ║          JAVACoin Network Launcher (Web Enabled)              ║
 echo ╚═══════════════════════════════════════════════════════════════╝
 echo.
 
-REM Check if JAR exists
-if not exist "target\javacoin-1.0-SNAPSHOT-jar-with-dependencies.jar" (
-    echo ❌ JAR file not found. Building project...
-    call mvn clean package
-    if errorlevel 1 (
-        echo ❌ Build failed. Please fix compilation errors.
+REM:: Check if JAR exists
+set JAR="target\javacoin-1.0-SNAPSHOT-jar-with-dependencies.jar"
+if not exist %JAR% (
+    echo [X] JAR file not found. Building project...
+    call mvnw.cmd clean package
+    if %ERRORLEVEL% neq 0 (
+        echo [X] Build failed. Please fix compilation errors.
         pause
-        exit /b 1
+        exit /b %ERRORLEVEL%
     )
 )
 

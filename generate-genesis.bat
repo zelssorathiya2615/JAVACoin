@@ -7,7 +7,7 @@ echo.
 REM Check if JAR exists
 if not exist "target\javacoin-1.0-SNAPSHOT-jar-with-dependencies.jar" (
     echo ❌ JAR file not found. Building project...
-    call mvn clean package
+    call mvnw.cmd clean package
     if errorlevel 1 (
         echo ❌ Build failed. Please fix compilation errors.
         pause

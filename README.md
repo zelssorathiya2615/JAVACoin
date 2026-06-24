@@ -2,7 +2,7 @@
 
 # 🪙 JAVACoin
 
-### A Decentralized Cryptocurrency Built from Scratch in Java
+### A Decentralized Cryptocurrency Built in Java
 
 [![Java](https://img.shields.io/badge/Java-17%2B-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](https://openjdk.org/)
 [![Maven](https://img.shields.io/badge/Maven-3.8%2B-C71A36?style=for-the-badge&logo=apache-maven&logoColor=white)](https://maven.apache.org/)
@@ -99,7 +99,6 @@ Unlike simplified blockchain tutorials that only implement hashing and linked li
 | Tool | Version | Download |
 |------|---------|----------|
 | **Java JDK** | 17 or higher | [Oracle JDK](https://www.oracle.com/java/technologies/downloads/) or [OpenJDK](https://adoptium.net/) |
-| **Apache Maven** | 3.8 or higher | [Download Maven](https://maven.apache.org/download.cgi) |
 | **Git** | Any | [Download Git](https://git-scm.com/downloads) |
 
 ### Step-by-Step Setup
@@ -109,8 +108,11 @@ Unlike simplified blockchain tutorials that only implement hashing and linked li
 git clone https://github.com/YOUR_USERNAME/JAVACoin.git
 cd JAVACoin
 
-# 2. Build the project (downloads dependencies automatically)
-mvn clean package
+# 2. Build the project (downloads dependencies automatically via Maven Wrapper)
+# Windows:
+mvnw.cmd clean package
+# Linux/Mac:
+./mvnw clean package
 
 # 3. Generate the Genesis Block (run once, before first launch)
 # Windows:
@@ -144,25 +146,25 @@ Once all nodes are running, open these URLs in your browser:
 
 ```
                         ┌─────────────────────────────────┐
-                        │          JAVACoin Node           │
+                        │          JAVACoin Node          │
                         │                                 │
-                        │  ┌──────────┐  ┌──────────────┐│
-                        │  │  Wallet   │  │  Blockchain  ││
-                        │  │ (ECDSA)  │  │  (Chain of   ││
-                        │  │          │  │   Blocks)    ││
-                        │  └──────────┘  └──────────────┘│
+                        │  ┌──────────┐  ┌──────────────┐ │
+                        │  │  Wallet  │  │  Blockchain  │ │
+                        │  │ (ECDSA)  │  │  (Chain of   │ │
+                        │  │          │  │   Blocks)    │ │
+                        │  └──────────┘  └──────────────┘ │
                         │                                 │
-                        │  ┌──────────┐  ┌──────────────┐│
-                        │  │  Miner   │  │  UTXO Set    ││
-                        │  │ (PoW     │  │  (Ledger)    ││
-                        │  │  Thread) │  │              ││
-                        │  └──────────┘  └──────────────┘│
+                        │  ┌──────────┐  ┌──────────────┐ │
+                        │  │  Miner   │  │  UTXO Set    │ │
+                        │  │ (PoW     │  │  (Ledger)    │ │
+                        │  │  Thread) │  │              │ │
+                        │  └──────────┘  └──────────────┘ │
                         │                                 │
-                        │  ┌──────────┐  ┌──────────────┐│
-                        │  │ Mempool  │  │ Web Server   ││
-                        │  │ (Pending │  │ (Jetty HTTP) ││
-                        │  │  TXs)    │  │              ││
-                        │  └──────────┘  └──────────────┘│
+                        │  ┌──────────┐  ┌──────────────┐ │
+                        │  │ Mempool  │  │ Web Server   │ │
+                        │  │ (Pending │  │ (Jetty HTTP) │ │
+                        │  │  TXs)    │  │              │ │
+                        │  └──────────┘  └──────────────┘ │
                         │                                 │
                         │  ┌─────────────────────────────┐│
                         │  │     P2P Network Layer       ││

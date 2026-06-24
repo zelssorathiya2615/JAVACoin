@@ -19,19 +19,6 @@ java -version
 - **Linux (Ubuntu):** `sudo apt install openjdk-17-jdk`
 - **Linux (Fedora):** `sudo dnf install java-17-openjdk-devel`
 
-### Apache Maven 3.8+
-
-**Check if installed:**
-```bash
-mvn --version
-```
-
-**Install:**
-- **Windows:** Download from [maven.apache.org](https://maven.apache.org/download.cgi), extract, add `bin/` to PATH
-- **macOS:** `brew install maven`
-- **Linux (Ubuntu):** `sudo apt install maven`
-- **Linux (Fedora):** `sudo dnf install maven`
-
 ### Git
 
 **Check if installed:**
@@ -52,8 +39,16 @@ cd JAVACoin
 ```
 
 ### 2. Build the Project
+We use the **Maven Wrapper** (`mvnw`), so you don't even need to install Maven manually! It will download everything automatically.
+
+**Windows:**
+```cmd
+mvnw.cmd clean package
+```
+
+**Linux/Mac:**
 ```bash
-mvn clean package
+./mvnw clean package
 ```
 
 This will:

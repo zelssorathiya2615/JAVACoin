@@ -8,7 +8,7 @@ echo ""
 JAR="target/javacoin-1.0-SNAPSHOT-jar-with-dependencies.jar"
 if [ ! -f "$JAR" ]; then
     echo "❌ JAR file not found. Building project..."
-    mvn clean package
+    ./mvnw clean package
     if [ $? -ne 0 ]; then
         echo "❌ Build failed. Please fix compilation errors."
         exit 1
