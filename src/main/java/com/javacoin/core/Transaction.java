@@ -27,8 +27,7 @@ public class Transaction implements Serializable {
     private boolean isCoinbase;                // Is this a mining reward?
     
     // Transient fields (not serialized)
-    private transient double cachedInputValue = -1;
-    private transient double cachedOutputValue = -1;
+    // Removed cached values to fix Java deserialization zero-default bug
     
     /**
      * Creates a new transaction
@@ -155,17 +154,12 @@ public class Transaction implements Serializable {
      * @return Sum of all input values
      */
     public double getInputValue() {
-        if (cachedInputValue >= 0) {
-            return cachedInputValue;
-        }
-        
         double total = 0.0;
         for (TransactionInput input : inputs) {
             if (input.getUtxo() != null) {
                 total += input.getUtxo().getValue();
             }
         }
-        cachedInputValue = total;
         return total;
     }
     
@@ -174,15 +168,10 @@ public class Transaction implements Serializable {
      * @return Sum of all output values
      */
     public double getOutputValue() {
-        if (cachedOutputValue >= 0) {
-            return cachedOutputValue;
-        }
-        
         double total = 0.0;
         for (TransactionOutput output : outputs) {
             total += output.getValue();
         }
-        cachedOutputValue = total;
         return total;
     }
     
